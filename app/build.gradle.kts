@@ -50,6 +50,16 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+
+    // Room
+    val room_version = "2.6.1"
+    implementation("androidx.room:room-runtime:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+
+    // ViewModel en Compose
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -57,16 +67,4 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-
-    val room_version = "2.6.1"
-    dependencies {
-
-        implementation("androidx.room:room-runtime:$room_version")
-        kapt("androidx.room:room-compiler:$room_version")
-
-// Agrega la dependencia de room-ktx para soporte de corrutinas
-        implementation("androidx.room:room-ktx:$room_version")
-        implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$room_version")
-    }
-
 }
